@@ -1,2 +1,3 @@
-# site-blue-anchor-plumbing
-Generated website for Blue Anchor Plumbing
+# Blue Anchor Plumbing
+
+Generated static website published by website-redesign-agent.
