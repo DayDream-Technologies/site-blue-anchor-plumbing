@@ -4,128 +4,136 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Anchor Plumbing | Seattle Plumbing Services</title>
-<link rel="stylesheet" href="styles.css">
+<meta name="description" content="Residential and commercial plumbing services serving Seattle. Emergency repairs, water heater installation, drain cleaning, pipe replacement, and remodel plumbing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header" role="banner">
-  <nav class="nav-inner" aria-label="Main navigation">
-    <a href="#home" class="logo">&#9875; Blue Anchor Plumbing</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">&#9776;</button>
-    <ul class="nav-links" id="nav-links" role="list">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="tel:+12065550147" class="nav-phone btn-cta">Call Us</a></li>
-    </ul>
-  </nav>
+  <div class="container header-inner">
+    <a href="#home" class="logo" aria-label="Blue Anchor Plumbing home">
+      <span class="logo-icon" aria-hidden="true">&#9875;</span>
+      <span class="logo-text">Blue Anchor <strong>Plumbing</strong></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">&#9776;</button>
+      <ul id="nav-menu" class="nav-list" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:+12065550147" class="header-phone" aria-label="Call Blue Anchor Plumbing">(206) 555-0147</a>
+  </div>
 </header>
 
 <main>
-  <section id="home" class="hero" aria-label="Hero">
-    <div class="hero-content">
-      <h1>Residential &amp; Commercial Plumbing in Seattle</h1>
-      <p>Blue Anchor Plumbing provides emergency repairs, fixture upgrades, and drain cleaning across Seattle.</p>
-      <a href="#contact" class="btn-cta">Request Service</a>
+  <section id="home" class="hero" aria-labelledby="hero-heading">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h1 id="hero-heading">Blue Anchor Plumbing<br><span class="hero-sub">Seattle's Plumbing Service</span></h1>
+        <p>Residential and commercial plumbing for homeowners and property managers across Seattle — from emergency repairs to full remodel plumbing.</p>
+        <a href="#contact" class="btn-primary">Request Service</a>
+      </div>
+      <div class="hero-graphic" aria-hidden="true">
+        <div class="pipe-art">
+          <div class="pipe h"></div>
+          <div class="pipe v"></div>
+          <div class="pipe-joint"></div>
+          <div class="pipe h short"></div>
+        </div>
+      </div>
     </div>
-    <div class="hero-icon" aria-hidden="true">
-      <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
-        <circle cx="60" cy="60" r="56" stroke="#F4A261" stroke-width="4"/>
-        <path d="M60 20v80M40 40l20-20 20 20M44 80c0 8.8 7.2 16 16 16s16-7.2 16-16" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
-        <line x1="30" y1="60" x2="90" y2="60" stroke="#F4A261" stroke-width="4" stroke-linecap="round"/>
-      </svg>
-    </div>
+    <div class="hero-divider" aria-hidden="true"></div>
   </section>
 
-  <div class="contact-band" role="complementary" aria-label="Quick contact">
-    <a href="tel:+12065550147">&#128222; (206) 555-0147</a>
-    <a href="mailto:hello@blueanchorplumbing.com">&#9993; hello@blueanchorplumbing.com</a>
-    <span>&#128205; 123 Harbor Way, Seattle, WA</span>
-    <span>&#128337; Mon–Fri 7am–7pm</span>
-  </div>
-
-  <section id="services" class="services-section" aria-labelledby="services-heading">
-    <div class="section-inner">
+  <section id="services" class="services" aria-labelledby="services-heading">
+    <div class="container">
       <h2 id="services-heading">What We Help With</h2>
-      <p class="section-sub">Plumbing services for homeowners and property managers in Seattle.</p>
-      <div class="services-grid">
-        <article class="service-card">
-          <div class="card-icon" aria-hidden="true">&#128680;</div>
+      <p class="section-intro">Blue Anchor provides plumbing services for homeowners and property managers throughout Seattle.</p>
+      <ul class="services-grid" role="list">
+        <li class="service-card">
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="24" cy="24" r="10"/><line x1="24" y1="4" x2="24" y2="14"/><line x1="24" y1="34" x2="24" y2="44"/><line x1="4" y1="24" x2="14" y2="24"/><line x1="34" y1="24" x2="44" y2="24"/></svg></span>
           <h3>Emergency Repairs</h3>
-          <p>Addressing urgent plumbing issues for residential and commercial properties.</p>
-          <a href="#contact">Contact Us</a>
-        </article>
-        <article class="service-card">
-          <div class="card-icon" aria-hidden="true">&#128167;</div>
+          <p>Plumbing repairs for urgent situations at your home or property.</p>
+        </li>
+        <li class="service-card">
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="14" y="8" width="20" height="28" rx="4"/><line x1="24" y1="36" x2="24" y2="44"/><line x1="18" y1="44" x2="30" y2="44"/><line x1="14" y1="18" x2="8" y2="18"/><line x1="34" y1="18" x2="40" y2="18"/></svg></span>
           <h3>Water Heater Installation</h3>
-          <p>Installation and replacement of water heater units.</p>
-          <a href="#contact">Contact Us</a>
-        </article>
-        <article class="service-card">
-          <div class="card-icon" aria-hidden="true">&#9881;</div>
+          <p>Installation and replacement of water heaters for residential and commercial properties.</p>
+        </li>
+        <li class="service-card">
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 40 Q24 8 40 40"/><line x1="24" y1="28" x2="24" y2="44"/><ellipse cx="24" cy="44" rx="8" ry="3"/></svg></span>
           <h3>Drain Cleaning</h3>
-          <p>Clearing blocked and slow drains throughout your property.</p>
-          <a href="#contact">Contact Us</a>
-        </article>
-        <article class="service-card">
-          <div class="card-icon" aria-hidden="true">&#128295;</div>
+          <p>Clearing blocked and slow-moving drains in kitchens, bathrooms, and utility areas.</p>
+        </li>
+        <li class="service-card">
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="8" y1="24" x2="40" y2="24"/><rect x="18" y="18" width="12" height="12" rx="2"/><line x1="8" y1="16" x2="8" y2="32"/><line x1="40" y1="16" x2="40" y2="32"/></svg></span>
           <h3>Pipe Replacement</h3>
-          <p>Replacing damaged or aging pipes in residential and commercial buildings.</p>
-          <a href="#contact">Contact Us</a>
-        </article>
-        <article class="service-card">
-          <div class="card-icon" aria-hidden="true">&#127968;</div>
+          <p>Replacement of aging, damaged, or failing pipes throughout the home or building.</p>
+        </li>
+        <li class="service-card">
+          <span class="service-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="6" y="6" width="36" height="36" rx="3"/><line x1="6" y1="20" x2="42" y2="20"/><line x1="24" y1="20" x2="24" y2="42"/></svg></span>
           <h3>Bath &amp; Kitchen Remodel Plumbing</h3>
           <p>Plumbing work for bathroom and kitchen renovation projects.</p>
-          <a href="#contact">Contact Us</a>
-        </article>
-      </div>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-    <div class="section-inner contact-inner">
-      <div class="contact-info">
-        <h2 id="contact-heading">Get in Touch</h2>
-        <ul class="info-list" role="list">
-          <li><strong>Phone:</strong> <a href="tel:+12065550147">(206) 555-0147</a></li>
-          <li><strong>Email:</strong> <a href="mailto:hello@blueanchorplumbing.com">hello@blueanchorplumbing.com</a></li>
-          <li><strong>Address:</strong> 123 Harbor Way, Seattle, WA</li>
-          <li><strong>Hours:</strong> Mon–Fri 7am–7pm</li>
-        </ul>
-      </div>
-      <div class="contact-form-wrap">
-        <form class="contact-form" aria-label="Message draft form" onsubmit="return false;">
-          <p class="form-note">Use this form to draft your message.</p>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" autocomplete="name" required>
-          <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel">
-          <label for="message">Brief Description</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-          <button type="submit" class="btn-cta">Send Message</button>
-        </form>
+  <section id="contact" class="contact-band" aria-labelledby="contact-heading">
+    <div class="container">
+      <h2 id="contact-heading">How to Reach Us</h2>
+      <div class="contact-grid">
+        <div class="contact-details">
+          <dl>
+            <div class="contact-row"><dt>Phone</dt><dd><a href="tel:+12065550147">(206) 555-0147</a></dd></div>
+            <div class="contact-row"><dt>Email</dt><dd><a href="mailto:hello@blueanchorplumbing.com">hello@blueanchorplumbing.com</a></dd></div>
+            <div class="contact-row"><dt>Address</dt><dd>123 Harbor Way, Seattle, WA</dd></div>
+            <div class="contact-row"><dt>Hours</dt><dd>Mon–Fri 7am–7pm</dd></div>
+          </dl>
+        </div>
+        <div class="contact-form-area">
+          <form class="contact-form" aria-label="Draft a message to Blue Anchor Plumbing" onsubmit="handleForm(event)">
+            <p class="form-note">Use this form to draft your message, then send it by email.</p>
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required>
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required>
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="4" required></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-brand">&#9875; Blue Anchor Plumbing</div>
-    <div class="footer-details">
-      <span>123 Harbor Way, Seattle, WA</span>
-      <a href="tel:+12065550147">(206) 555-0147</a>
-      <a href="mailto:hello@blueanchorplumbing.com">hello@blueanchorplumbing.com</a>
-      <span>Mon–Fri 7am–7pm</span>
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon" aria-hidden="true">&#9875;</span>
+      <span class="logo-text">Blue Anchor <strong>Plumbing</strong></span>
     </div>
-    <nav class="footer-nav" aria-label="Footer navigation">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-nav" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
+    <address class="footer-contact">
+      123 Harbor Way, Seattle, WA<br>
+      <a href="tel:+12065550147">(206) 555-0147</a><br>
+      <a href="mailto:hello@blueanchorplumbing.com">hello@blueanchorplumbing.com</a><br>
+      Mon–Fri 7am–7pm
+    </address>
   </div>
+  <p class="footer-copy">&copy; <span id="yr"></span> Blue Anchor Plumbing. All rights reserved.</p>
 </footer>
 <script src="script.js"></script>
 </body>
