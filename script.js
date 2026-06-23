@@ -1,43 +1,51 @@
-(function () {
-  const hamburger = document.querySelector('.hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
+document.addEventListener('DOMContentLoaded',function(){
+  // Year
+  var yr=document.getElementById('yr');
+  if(yr)yr.textContent=new Date().getFullYear();
 
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', function () {
-      const isOpen = !mobileNav.hidden;
-      mobileNav.hidden = isOpen;
-      hamburger.setAttribute('aria-expanded', String(!isOpen));
-    });
-
-    mobileNav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        mobileNav.hidden = true;
-        hamburger.setAttribute('aria-expanded', 'false');
-      });
+  // Mobile nav toggle
+  var toggle=document.querySelector('.nav-toggle');
+  var nav=document.getElementById('main-nav');
+  if(toggle&&nav){
+    toggle.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open);
     });
   }
 
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      const id = this.getAttribute('href').slice(1);
-      const target = document.getElementById(id);
-      if (target) {
-        e.preventDefault();
-        const headerH = document.querySelector('.site-header').offsetHeight;
-        const top = target.getBoundingClientRect().top + window.scrollY - headerH;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-        target.setAttribute('tabindex', '-1');
-        target.focus({ preventScroll: true });
+  // Active nav on scroll
+  var sections=document.querySelectorAll('main section[id]');
+  var navLinks=document.querySelectorAll('.main-nav a');
+  function setActive(){
+    var scrollY=window.scrollY+120;
+    var current='';
+    sections.forEach(function(s){
+      if(scrollY>=s.offsetTop)current=s.id;
+    });
+    navLinks.forEach(function(a){
+      a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+    });
+  }
+  window.addEventListener('scroll',setActive,{passive:true});
+  setActive();
+
+  // Close nav on link click (mobile)
+  navLinks.forEach(function(a){
+    a.addEventListener('click',function(){
+      if(nav.classList.contains('open')){
+        nav.classList.remove('open');
+        if(toggle)toggle.setAttribute('aria-expanded','false');
       }
     });
   });
 
-  // Prevent actual form submission
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
+  // Form submit notice
+  var form=document.querySelector('.contact-form');
+  if(form){
+    form.addEventListener('submit',function(e){
       e.preventDefault();
+      var btn=form.querySelector('button[type="submit"]');
+      if(btn){btn.textContent='Message drafted';btn.disabled=true;}
     });
   }
-}());
+});
