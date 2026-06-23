@@ -1,40 +1,43 @@
-document.getElementById('yr').textContent = new Date().getFullYear();
+(function () {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
 
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function () {
+      const isOpen = !mobileNav.hidden;
+      mobileNav.hidden = isOpen;
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+    });
 
-hamburger.addEventListener('click', () => {
-  const open = hamburger.classList.toggle('open');
-  nav.classList.toggle('open', open);
-  hamburger.setAttribute('aria-expanded', open);
-});
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileNav.hidden = true;
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
 
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const id = this.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        const headerH = document.querySelector('.site-header').offsetHeight;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerH;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
+    });
   });
-});
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
+  // Prevent actual form submission
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
-
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  header.style.boxShadow = window.scrollY > 10 ? '0 3px 12px rgba(0,0,0,.22)' : '0 2px 8px rgba(0,0,0,.18)';
-});
-
-document.querySelector('.contact-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = 'Message drafted — contact us directly to send.';
-  btn.disabled = true;
-});
+    });
+  }
+}());
